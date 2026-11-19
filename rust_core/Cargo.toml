@@ -1,0 +1,15 @@
+[package]
+name = "rustcraft_core"
+version = "1.0.0"
+edition = "2021"
+description = "Native Rust launcher core for RustCraft Minecraft Android Launcher (auth, Mojang manifest, Modrinth/CurseForge queries, skin verification, touch layout, and JNI FFI)."
+
+[lib]
+name = "rustcraft_core"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+jni = "0.21"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+md5 = "0.7"

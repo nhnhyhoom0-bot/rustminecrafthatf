@@ -1,0 +1,6 @@
+{
+  "name": "RustCraft",
+  "description": "لانشر ماين كرافت بنواة راست يدعم السكنات، حسابات مايكروسوفت وكراك، مودات Modrinth وCurseForge، محرر لمس مخصص والتحديثات التلقائية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

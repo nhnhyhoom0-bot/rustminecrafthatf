@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RustCraft</string>
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_mods">المودات</string>
+    <string name="nav_skins">السكنات والحساب</string>
+    <string name="nav_touch">التحكم باللمس</string>
+    <string name="nav_settings">الإعدادات</string>
+    <string name="play_now">تشغيل ماين كرافت</string>
+    <string name="update_available_title">تحديث جديد متوفر</string>
+    <string name="rust_core_badge">نواة Rust + JNI</string>
+</resources>
