@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Build
 import android.os.Environment
 import android.provider.DocumentsContract
 import com.example.core.RustCoreBridge
@@ -588,16 +589,15 @@ class LauncherRepository(
     fun detectExternalLaunchers(): List<ExternalLauncherStatus> {
         val pm = context.packageManager
         fun isInstalled(pkg: String): Boolean = try {
-            pm.getPackageInfo(pkg, PackageManager.PackageInfoFlags.of(0))
-            true
-        } catch (_: Throwable) {
-            try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                pm.getPackageInfo(pkg, PackageManager.PackageInfoFlags.of(0))
+            } else {
                 @Suppress("DEPRECATION")
                 pm.getPackageInfo(pkg, 0)
-                true
-            } catch (_: Throwable) {
-                false
             }
+            true
+        } catch (_: Throwable) {
+            false
         }
         return listOf(
             ExternalLauncherStatus(
